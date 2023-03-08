@@ -1,34 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Slide, Transition } from "./components/slide-show.component";
+
+import Intro from "./lessons/introduction/introduction-1.mdx";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [step, setStep] = useState(0);
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    useEffect(() => {
+        function handleKeyPress(e: KeyboardEvent) {
+            e.preventDefault();
+            if (e.key === "ArrowRight") {
+                if (step < 1) {
+                    setStep(step + 1);
+                }
+            } else if (e.key === "ArrowLeft") {
+                if (step > 0) {
+                    setStep(step - 1);
+                }
+            }
+        }
+        window.addEventListener("keyup", handleKeyPress);
+
+        return () => {
+            window.removeEventListener("keyup", handleKeyPress);
+        };
+    }, [step]);
+
+    return (
+        <div className="App h-full">
+            <div className="bg-gray-800 text-white h-full p-10">
+                <div className="background-flag md:background-flag-medium 2xl:background-flag-big" />
+                <div className="h-full flex flex-col justify-center items-center">
+                    {step === 0 && (
+                        <Slide transition={Transition.FADE_IN} arrowsDelay={2.8}>
+                            <Intro />
+                        </Slide>
+                    )}
+                    {step === 1 && (
+                        <Slide>
+                            <Intro />
+                        </Slide>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;

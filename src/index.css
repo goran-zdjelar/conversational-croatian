@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-flag {
+  background-image: url(https://www.thedubrovniktimes.com/media/k2/items/cache/d02042ae9f501f4f45b4b4012832eb3d_XL.jpg);
+  background-size: cover;
+  width: 60vh;
+  height: 30vh;
+  transform: rotate(-45deg);
+  position: fixed;
+  bottom: -50px;
+  right: -200px;
+  opacity: 0.035;
+}
+
+@layer utilities {
+   .background-flag-medium {
+    width: 120vh;
+    height: 70vh;
+    bottom: -160px;
+    right: -500px;
+  }
+  .background-flag-big {
+    width: 150vh;
+    height: 90vh;
+    bottom: -200px;
+    right: -500px;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
