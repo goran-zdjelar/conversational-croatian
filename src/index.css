@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .background-flag {
-  background-image: url(https://www.thedubrovniktimes.com/media/k2/items/cache/d02042ae9f501f4f45b4b4012832eb3d_XL.jpg);
+  background-image: url(./assets/croatian-flag.jpg);
   background-size: cover;
   width: 60vh;
   height: 30vh;

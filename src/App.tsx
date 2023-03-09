@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { Slide, Transition } from "./components/slide-show.component";
 
 import Intro from "./lessons/introduction/introduction-1.mdx";
