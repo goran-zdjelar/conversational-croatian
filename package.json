@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material-tailwind/react": "1.4.2",
     "@mdx-js/rollup": "2.3.0",
+    "classnames": "2.3.2",
     "framer-motion": "10.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

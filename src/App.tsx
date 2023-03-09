@@ -29,11 +29,11 @@ function App() {
 
     return (
         <div className="App h-full">
-            <div className="bg-gray-800 text-white h-full p-10">
+            <div className="bg-blue-gray-1000 text-white h-full p-10">
                 <div className="background-flag md:background-flag-medium 2xl:background-flag-big" />
                 <div className="h-full flex flex-col justify-center items-center">
                     {step === 0 && (
-                        <Slide transition={Transition.FADE_IN} arrowsDelay={2.8}>
+                        <Slide transition={Transition.FADE_IN} hideArrows={true}>
                             <Intro />
                         </Slide>
                     )}
