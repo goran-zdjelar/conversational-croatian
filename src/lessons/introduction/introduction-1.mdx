@@ -1,0 +1,25 @@
+import { Button } from "@material-tailwind/react";
+
+import { Title } from "../../components/title.component.tsx";
+import { Slide } from "../../components/slide-show.component.tsx";
+import { NormalFont } from "../../components/font.component.tsx";
+import { JoinButton } from "../../components/join-button.component.tsx";
+import { Animations } from "../../components/animations.tsx";
+
+<Title>
+    Welcome to course <br />
+    Conversational Croatian
+</Title>
+
+<Animations.FadeIn delay={1.5}>
+    ### Course lenght: <NormalFont>31 days</NormalFont>
+
+    ### Time needed to commit: <NormalFont>30-60 minutes per day</NormalFont>
+
+    ### Price: <NormalFont>free</NormalFont>
+
+    <Animations.FadeIn delay={2.5}>
+        <JoinButton />
+    </Animations.FadeIn>
+
+</Animations.FadeIn>
